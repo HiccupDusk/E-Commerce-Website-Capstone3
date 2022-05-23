@@ -1,75 +1,83 @@
-// REACT
-import * as React from 'react';
+// React Component
+import React from 'react';
+import { useEffect, useState, useContext } from 'react';
 
-// CHAKRA
+// Chakra Ui Components
+import {
+  Heading,
+  HStack,
+  VStack,
+  Wrap,
+  WrapItem,
+  Button,
+  Text,
+  Flex,
+  Container,
+  Box,
+} from '@chakra-ui/react';
 
-// ICONS
-import { FaArrowRight } from 'react-icons/fa';
+// local Component
+import NotSignIn from '../components/NotSignIn';
+import HomeSection2 from '../components/HomeSection2';
+import CartSection1 from '../components/CartSection1';
+import OrderSummary from '../components/OrderSummary';
+import CartItemCard from '../components/CartItemCard';
 
-// LOCAL COMPONENTS
-import { formatPrice } from './PriceTag';
-import { CartItem } from './CartItem';
-import { CartOrderSummary } from './CartOrderSummary';
-
+// useContext
+import UserContext from '../UserContext';
 const Cart = () => {
-  return (
-    <Box
-      maxW={{
-        base: '3xl',
-        lg: '7xl',
-      }}
-      mx='auto'
-      px={{
-        base: '4',
-        md: '8',
-        lg: '12',
-      }}
-      py={{
-        base: '6',
-        md: '8',
-        lg: '12',
-      }}
-    >
-      <Stack
-        direction={{
-          base: 'column',
-          lg: 'row',
-        }}
-        align={{
-          lg: 'flex-start',
-        }}
-        spacing={{
-          base: '8',
-          md: '16',
-        }}
-      >
-        <Stack
-          spacing={{
-            base: '8',
-            md: '10',
-          }}
-          flex='2'
-        >
-          <Heading fontSize='2xl' fontWeight='extrabold'>
-            Shopping Cart (3 items)
-          </Heading>
+  const [products, setProducts] = useState([]);
 
-          <Stack spacing='6'>
-            {cartData.map((item) => (
-              <CartItem key={item.id} {...item} />
-            ))}
-          </Stack>
-        </Stack>
+  const { user, setUser } = useContext(UserContext);
 
-        <Flex direction='column' align='center' flex='1'>
-          <CartOrderSummary />
-          <HStack mt='6' fontWeight='semibold'>
-            <p>or</p>
-            <Link color={mode('blue.500', 'blue.200')}>Continue shopping</Link>
-          </HStack>
-        </Flex>
-      </Stack>
-    </Box>
+  useEffect(() => {
+    fetch('http://localhost:4000/api/products/retrieveOrderUser', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(
+          data.map((products) => {
+            return <CartItemCard key={products._id} CardItemProp={products} />;
+          })
+        );
+      });
+  }, []);
+
+  return user.id !== null ? (
+    <>
+      <CartSection1 />
+      <Box>
+        <Wrap justify='center' mt='5rem' gap='5rem'>
+          <Flex direction='column'>
+            <Text
+              p='3'
+              fontSize='2xl'
+              fontWeight='extrabold'
+              w='auto'
+              bgGradient='linear(to-r, teal.300, pink.300)'
+              color='white'
+              bgClip='text'
+              borderRadius='lg'
+            >
+              Shopping Cart Items:
+            </Text>
+            <Wrap direction='column'>{products}</Wrap>
+          </Flex>
+
+          <OrderSummary />
+        </Wrap>
+      </Box>
+    </>
+  ) : (
+    <>
+      <NotSignIn />
+      <HomeSection2 />
+    </>
   );
 };
 

@@ -24,6 +24,7 @@ import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 // REACT ROUTER DOM
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 // ALERTS
 import Swal from 'sweetalert2';
@@ -105,7 +106,7 @@ function SignUp() {
                 Swal.fire({
                   title: 'Registration successful',
                   icon: 'success',
-                  text: 'Welcome to Batch 164, Course Booking!',
+                  text: 'Welcome to Camisetas, Enjoy your Shopping!',
                 });
 
                 navigate('/login');
@@ -186,8 +187,7 @@ function SignUp() {
             mb='26px'
             w={{ base: '90%', sm: '60%', lg: '40%', xl: '30%' }}
           >
-            Use these awesome forms to login or create new account in your
-            project for free.
+            Register now to enjoy shopping at Camisetas Page!
           </Text>
         </Flex>
         {/* WHOLE FORM */}
@@ -396,6 +396,7 @@ function SignUp() {
                 {/* button sign up! */}
                 {isActive ? (
                   <Button
+                    bgGradient='linear(to-l,pink.300,  teal.400)'
                     type='submit'
                     bg='teal.300'
                     fontSize='10px'
@@ -415,6 +416,7 @@ function SignUp() {
                   </Button>
                 ) : (
                   <Button
+                    bgGradient='linear(to-l,pink.300,  teal.400)'
                     type='submit'
                     bg='teal.300'
                     fontSize='10px'
@@ -445,17 +447,23 @@ function SignUp() {
               mt='0px'
             >
               {/* already have an account sign in */}
-              <Text color={textColor} fontWeight='medium'>
+              <Text
+                bgGradient='linear(to-r, teal.200, pink.300)'
+                bgClip='text'
+                fontWeight='medium'
+              >
                 Already have an account?
-                <Link
-                  color={titleColor}
-                  as='span'
-                  ms='5px'
-                  href='#'
-                  fontWeight='bold'
-                >
-                  Sign In
-                </Link>
+                <ReactRouterLink to='/login'>
+                  <Link
+                    color={titleColor}
+                    as='span'
+                    ms='5px'
+                    href='#'
+                    fontWeight='bold'
+                  >
+                    Sign In
+                  </Link>
+                </ReactRouterLink>
               </Text>
             </Flex>
           </Flex>

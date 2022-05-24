@@ -34,7 +34,6 @@ import {
 
 const Dashboard = () => {
   // TOAST
-  // TOAST
   const Toast = Swal.mixin({
     toast: true,
     position: 'bottom-center',
@@ -58,18 +57,21 @@ const Dashboard = () => {
   function createProduct(e) {
     //prevents page redirection via a form submission
     e.preventDefault();
-    fetch('http://localhost:4000/api/products/createProduct', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify({
-        name: name,
-        price: price,
-        description: description,
-      }),
-    })
+    fetch(
+      'https://stark-spire-46613.herokuapp.com/api/products/createProduct',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify({
+          name: name,
+          price: price,
+          description: description,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data === true) {

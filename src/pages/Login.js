@@ -67,7 +67,7 @@ function SignIn() {
 
   function authenticate(e) {
     e.preventDefault();
-    fetch('http://localhost:4000/api/users/login', {
+    fetch('https://stark-spire-46613.herokuapp.com/api/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ function SignIn() {
   }
 
   const retrieveUserDetails = (token) => {
-    fetch('http://localhost:4000/api/users/details', {
+    fetch('https://stark-spire-46613.herokuapp.com/api/users/details', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

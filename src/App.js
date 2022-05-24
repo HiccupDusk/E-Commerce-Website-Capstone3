@@ -41,7 +41,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/users/details', {
+    fetch('https://stark-spire-46613.herokuapp.com/api/users/details', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },

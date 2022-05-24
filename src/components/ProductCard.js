@@ -45,7 +45,7 @@ export default function ProductCard({ productProp }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   function addToCart() {
-    fetch('http://localhost:4000/api/users/addToCart', {
+    fetch('https://stark-spire-46613.herokuapp.com/api/users/addToCart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

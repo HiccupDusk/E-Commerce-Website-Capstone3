@@ -18,7 +18,7 @@ export default function Shop() {
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/products/')
+    fetch('https://stark-spire-46613.herokuapp.com/api/products/')
       .then((res) => res.json())
       .then((data) => {
         setProducts(

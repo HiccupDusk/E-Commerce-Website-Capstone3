@@ -31,13 +31,16 @@ const Cart = () => {
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/products/retrieveOrderUser', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-    })
+    fetch(
+      'https://stark-spire-46613.herokuapp.com/api/products/retrieveOrderUser',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setProducts(

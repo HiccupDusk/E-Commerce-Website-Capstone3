@@ -22,7 +22,7 @@ export default function Component() {
   const [products, setProducts] = useState();
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/products/all')
+    fetch('https://stark-spire-46613.herokuapp.com/api/products/all')
       .then((res) => res.json())
       .then((data) => {
         setProducts(

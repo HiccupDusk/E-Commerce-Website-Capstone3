@@ -33,16 +33,19 @@ function Ma({ CardItemProp }) {
   // remove from cart function
   function removeFromCart(e) {
     e.preventDefault();
-    fetch('http://localhost:4000/api/products/removeFromCart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify({
-        productId: _id,
-      }),
-    })
+    fetch(
+      'https://stark-spire-46613.herokuapp.com/api/products/removeFromCart',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify({
+          productId: _id,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged === true) {

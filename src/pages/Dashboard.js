@@ -54,9 +54,7 @@ const Dashboard = () => {
   const [description, setDescription] = useState('');
 
   // CREATE A PRODUCT
-  function createProduct(e) {
-    //prevents page redirection via a form submission
-    e.preventDefault();
+  function createProduct() {
     fetch(
       'https://stark-spire-46613.herokuapp.com/api/products/createProduct',
       {

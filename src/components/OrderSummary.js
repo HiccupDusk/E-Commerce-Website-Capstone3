@@ -10,6 +10,7 @@ import {
   Text,
   useColorModeValue,
   Flex,
+  Box,
 } from '@chakra-ui/react';
 
 // local Component
@@ -68,16 +69,15 @@ const OrderSummary = () => {
     <Flex
       bg={useColorModeValue('gray.100', 'gray.600')}
       m='2rem'
-      p='3rem'
+      p='2rem'
       direction='column'
       borderRadius='lg'
       gap='2rem'
-      h='max-content'
     >
       <Heading size='md'> ORDERS SUMMARY:</Heading>
       <Heading size='xs'>ITEMS:</Heading>
       {order}
-      <HStack gap='10rem'>
+      <HStack gap='5rem'>
         <Heading size='sm'>TOTAL PRICE:</Heading>
         {total}
       </HStack>
@@ -85,10 +85,9 @@ const OrderSummary = () => {
       <Button
         bgGradient='linear(to-l,pink.300,  teal.400)'
         color='teal.400'
-        ms='5px'
         href='#'
         fontWeight='bold'
-        p='7'
+        p='5'
       >
         <Text mx='3rem' color='white'>
           Proceed to Checkout

@@ -4,16 +4,13 @@ import { useEffect, useState, useContext } from 'react';
 
 // Chakra Ui Components
 import {
-  Heading,
-  HStack,
-  VStack,
   Wrap,
-  WrapItem,
-  Button,
-  Text,
   Flex,
-  Container,
   Box,
+  Stack,
+  useColorModeValue,
+  Text,
+  WrapItem,
 } from '@chakra-ui/react';
 
 // local Component
@@ -26,6 +23,8 @@ import CartItemCard from '../components/CartItemCard';
 // useContext
 import UserContext from '../UserContext';
 const Cart = () => {
+  const bg = useColorModeValue('white', 'gray.800');
+
   const [products, setProducts] = useState([]);
 
   const { user, setUser } = useContext(UserContext);
@@ -54,8 +53,9 @@ const Cart = () => {
   return user.id !== null ? (
     <>
       <CartSection1 />
-      <Box>
-        <Wrap justify='center' mt='5rem' gap='5rem'>
+
+      <Wrap justify='center' mt='5rem' direction='row'>
+        <WrapItem>
           <Flex direction='column'>
             <Text
               p='3'
@@ -69,12 +69,27 @@ const Cart = () => {
             >
               Shopping Cart Items:
             </Text>
-            <Wrap direction='column'>{products}</Wrap>
+            <Flex
+              w='full'
+              bg='gray.100'
+              alignItems='center'
+              justifyContent='center'
+            >
+              <Stack
+                direction={{ base: 'column' }}
+                w='full'
+                bg={{ md: bg }}
+                shadow='lg'
+              >
+                {products}
+              </Stack>
+            </Flex>
           </Flex>
-
+        </WrapItem>
+        <WrapItem>
           <OrderSummary />
-        </Wrap>
-      </Box>
+        </WrapItem>
+      </Wrap>
     </>
   ) : (
     <>

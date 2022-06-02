@@ -83,15 +83,15 @@ export default function ProductCard({ productProp }) {
       <Box
         maxW='xs'
         mx='auto'
-        // bg={useColorModeValue('WHITE', 'gray.600')}
-        bgGradient='linear(to-r,teal.100, pink.100)'
+        bg={useColorModeValue('gray.200', 'gray.600')}
+        // bgGradient='linear(to-r,teal.100, pink.100)'
         shadow='lg'
         rounded='lg'
       >
         {/* NAME */}
         <Box px={4} py={2}>
           <chakra.h1
-            color={useColorModeValue('gray.800', 'gray.600')}
+            color={useColorModeValue('gray.800', 'gray.100')}
             fontWeight='bold'
             fontSize='3xl'
             textTransform='uppercase'
@@ -102,7 +102,7 @@ export default function ProductCard({ productProp }) {
           <chakra.p
             mt={1}
             fontSize='sm'
-            color={useColorModeValue('gray.600', 'gray.600')}
+            color={useColorModeValue('gray.600', 'gray.100')}
           >
             {description}
           </chakra.p>
@@ -127,7 +127,7 @@ export default function ProductCard({ productProp }) {
         >
           {/* PRICE */}
           <chakra.h1
-            color={useColorModeValue('black.50', 'white')}
+            color={useColorModeValue('black.50', 'gray.100')}
             fontWeight='bold'
             fontSize='lg'
           >
@@ -176,7 +176,7 @@ export default function ProductCard({ productProp }) {
           {/* modal */}
           <Modal isOpen={isOpen} onClose={onClose} size='sm'>
             <ModalOverlay />
-            <ModalContent bgGradient='linear(to-r, teal.100, pink.50)'>
+            <ModalContent bg={useColorModeValue('white', 'gray.600')}>
               <ModalHeader
                 color={useColorModeValue('gray.800', 'white')}
                 fontWeight='bold'
@@ -194,8 +194,8 @@ export default function ProductCard({ productProp }) {
                 >
                   Price: ${price}
                 </chakra.h1>
-                <Text> Description: {description}</Text>
-
+                <Text fontWeight='bold'> Description:</Text>
+                <Text> {description}</Text>
                 <Image
                   fit=''
                   mt={2}

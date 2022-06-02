@@ -26,8 +26,14 @@ export default function Component() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(
-          data.map((products) => {
-            return <DashboardCard key={products._id} productProp={products} />;
+          data.map((element) => {
+            return (
+              <DashboardCard
+                key={element._id}
+                productProp={element}
+                setProducts={setProducts}
+              />
+            );
           })
         );
       });

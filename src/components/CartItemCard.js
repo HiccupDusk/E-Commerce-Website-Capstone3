@@ -2,7 +2,13 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 // CHAKRA COMPONENT
-import { chakra, Box, Flex, useColorModeValue, HStack } from '@chakra-ui/react';
+import {
+  chakra,
+  Flex,
+  Button,
+  SimpleGrid,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { StarIcon } from '@chakra-ui/icons';
 
@@ -10,6 +16,11 @@ import { StarIcon } from '@chakra-ui/icons';
 import Swal from 'sweetalert2';
 
 function Ma({ CardItemProp }) {
+  // color
+  const dataColor = useColorModeValue('white', 'gray.800');
+
+  const bg2 = useColorModeValue('gray.100', 'gray.700');
+
   // destructing
   const { name, price, _id, description } = CardItemProp;
 
@@ -32,7 +43,7 @@ function Ma({ CardItemProp }) {
 
   // remove from cart function
   function removeFromCart(e) {
-    e.preventDefault();
+    // e.preventDefault();
     fetch(
       'https://stark-spire-46613.herokuapp.com/api/products/removeFromCart',
       {
@@ -66,93 +77,51 @@ function Ma({ CardItemProp }) {
   }
 
   return (
-    <Flex
-      bg={useColorModeValue('gray.50', 'gray.600')}
-      // p=
-      // w='full'
-      alignItems='center'
-      justifyContent='center'
-      m='4'
-    >
-      <Flex
-        maxW='md'
-        mx='auto'
-        bgGradient='linear(to-r, teal.50, pink.50)'
-        shadow='lg'
-        rounded='lg'
-        overflow='hidden'
+    <Flex direction={{ base: 'row', md: 'column' }} bg={dataColor} key={_id}>
+      <SimpleGrid
+        spacingY={3}
+        columns={{ base: 1, md: 3 }}
+        w={{ base: 120, md: 'full' }}
+        textTransform='uppercase'
+        bg={bg2}
+        color={'gray.500'}
+        py={{ base: 1, md: 4 }}
+        px={{ base: 2, md: 10 }}
+        fontSize='md'
+        fontWeight='hairline'
       >
-        <Box
-          w={1 / 3}
-          display={{ base: 'none', md: 'flex' }}
-          bgSize='cover'
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')",
-          }}
-        ></Box>
-
-        <Box w={2 / 3} p={{ base: 4, md: 4 }}>
-          <chakra.h1
-            fontSize='2xl'
-            fontWeight='bold'
-            color={useColorModeValue('gray.800', 'gray.600')}
+        <span>Name</span>
+        <span>Price</span>
+        <chakra.span textAlign={{ md: 'right' }}>Actions</chakra.span>
+      </SimpleGrid>
+      <SimpleGrid
+        spacingY={3}
+        columns={{ base: 1, md: 3 }}
+        w='full'
+        py={2}
+        px={10}
+        fontWeight='hairline'
+      >
+        <span>{name}</span>
+        <chakra.span
+          textOverflow='ellipsis'
+          overflow='hidden'
+          whiteSpace='nowrap'
+        >
+          ${price}
+        </chakra.span>
+        <Flex justify={{ md: 'end' }}>
+          <Button
+            variant='solid'
+            colorScheme='red'
+            size='sm'
+            onClick={removeFromCart}
           >
-            {name}
-          </chakra.h1>
-          <chakra.h1
-            fontSize='2xl'
-            fontWeight='bold'
-            color={useColorModeValue('gray.800', 'gray.600')}
-          >
-            $ {price}
-          </chakra.h1>
-
-          <chakra.p
-            mt={2}
-            fontSize='sm'
-            color={useColorModeValue('gray.600', 'gray.400')}
-            display={{ base: 'none', md: 'flex' }}
-          >
-            {description}
-          </chakra.p>
-
-          <HStack spacing={1} display='flex' alignItems='center' mt={2}>
-            <StarIcon color={useColorModeValue('yellow.700', 'teal.300')} />
-            <StarIcon color={useColorModeValue('yellow.700', 'teal.300')} />
-            <StarIcon color={useColorModeValue('yellow.700', 'teal.300')} />
-            <StarIcon color='gray.500' />
-            <StarIcon color='gray.500' />
-          </HStack>
-
-          <Flex mt={3} alignItems='center' justifyContent='space-between'>
-            <chakra.h1 color='gray.600' fontWeight='bold' fontSize='lg'>
-              ${price}
-            </chakra.h1>
-            <chakra.button
-              px={2}
-              py={1}
-              fontSize='xs'
-              color='gray.900'
-              fontWeight='bold'
-              rounded='lg'
-              textTransform='uppercase'
-              _hover={{
-                bg: 'teal.200',
-              }}
-              _focus={{
-                bg: 'teal.400',
-              }}
-              bg='red.200'
-              onClick={removeFromCart}
-            >
-              Remove from cart
-            </chakra.button>
-          </Flex>
-        </Box>
-      </Flex>
+            Remove From Cart
+          </Button>
+        </Flex>
+      </SimpleGrid>
     </Flex>
   );
 }
-
 export default Ma;

@@ -2,10 +2,10 @@ import { Heading, Spacer, Wrap, Divider, Box, Flex } from '@chakra-ui/react';
 import { useEffect, useState, useContext } from 'react';
 
 // local component
-import ShopsSection from '../components/ShopSection';
-import ShopsSection2 from '../components/ShopSection2';
+import ShopsSection from '../components/sectionComponents/ShopSection';
+import ShopsSection2 from '../components/sectionComponents/ShopSection2';
 
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/cardComponents/ProductCard';
 import Pagination from '../components/Pagination';
 import NotSignIn from '../components/NotSignIn';
 

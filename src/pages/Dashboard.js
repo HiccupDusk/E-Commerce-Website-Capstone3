@@ -3,8 +3,8 @@ import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 
 // local Components
-import DashboardSection1 from '../components/DashboardSection1';
-import DashboardSection2 from '../components/DashboardSection2';
+import DashboardSection1 from '../components/sectionComponents/DashboardSection1';
+import DashboardSection2 from '../components/sectionComponents/DashboardSection2';
 
 // toast
 import Swal from 'sweetalert2';

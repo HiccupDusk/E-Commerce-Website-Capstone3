@@ -15,10 +15,10 @@ import {
 
 // local Component
 import NotSignIn from '../components/NotSignIn';
-import HomeSection2 from '../components/HomeSection2';
-import CartSection1 from '../components/CartSection1';
+import HomeSection2 from '../components/sectionComponents/HomeSection2';
+import CartSection1 from '../components/sectionComponents/CartSection1';
 import OrderSummary from '../components/OrderSummary';
-  import CartItemCard from '../components/CartItemCard';
+import CartItemCard from '../components/cardComponents/CartItemCard';
 
 // useContext
 import UserContext from '../UserContext';

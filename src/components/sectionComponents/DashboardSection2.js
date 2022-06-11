@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 
 // local components
-import DashboardCard from '../components/DashboardCard';
+import DashboardCard from '../cardComponents/DashboardCard';
 export default function Component() {
   const [products, setProducts] = useState();
 

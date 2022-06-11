@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 
 // local Component
-import OrderCard from './OrderCard';
+import OrderCard from './cardComponents/OrderCard';
 
 const OrderSummary = () => {
   // ORDER SUMMARY CARD

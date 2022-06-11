@@ -37,7 +37,7 @@ export default function Component() {
           })
         );
       });
-  }, []);
+  });
 
   const bg = useColorModeValue('white', 'gray.800');
   const bg2 = useColorModeValue('white', 'gray.800');

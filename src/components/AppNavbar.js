@@ -194,8 +194,8 @@ export default function Header() {
       {user.id !== null ? (
         <>
           <ReactRouterLink to='/logout'>
-            <Button w='full' variant='ghost' leftIcon={<TiShoppingCart />}>
-              logout
+            <Button w='full' variant='ghost'>
+              Logout
             </Button>
           </ReactRouterLink>{' '}
         </>

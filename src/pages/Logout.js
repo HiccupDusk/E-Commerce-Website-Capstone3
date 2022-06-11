@@ -20,14 +20,6 @@ export default function Logout() {
     },
   });
 
-  const toaster = () =>
-    Toast.fire({
-      title: 'Sign in successfully',
-      icon: 'success',
-      title: 'Welcome to Camisetas, Enjoy your shopping',
-      background: '#E0F2F1',
-    });
-
   const { unsetUser, setUser } = useContext(UserContext);
 
   //Clear the localStorage
@@ -37,12 +29,11 @@ export default function Logout() {
   useEffect(() => {
     //Set the user state back into it's original value
     setUser({ id: null });
-  }, []);
+  }, [setUser]);
 
   return (
     <>
       <Navigate to='/' />
-      {toaster}
     </>
   );
 }

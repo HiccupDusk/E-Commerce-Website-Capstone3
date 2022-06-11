@@ -17,9 +17,9 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Logout from './pages/logout';
-import Error from './pages/rrror';
-import Shop from './pages/dhop';
-import Cart from './pages/vart';
+import Error from './pages/error';
+import Shop from './pages/shop';
+import Cart from './pages/cart';
 import Dashboard from './pages/dashboard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

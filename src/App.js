@@ -4,11 +4,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 // LIBRARY
-import {
-  Box,
-  ChakraProvider,
-  bgGradient,
-} from '@chakra-ui/react';
+import { Box, ChakraProvider, bgGradient } from '@chakra-ui/react';
 import theme from './theme';
 import './App.css';
 
@@ -17,14 +13,14 @@ import AppNavbar from './components/AppNavbar';
 import Footer from './components/Footer';
 
 // PAGES
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Logout from './pages/Logout';
-import Error from './pages/Error';
-import Shop from './pages/Shop';
-import Cart from './pages/Cart';
-import Dashboard from './pages/Dashboard';
+import Home from './pages/home';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import Logout from './pages/logout';
+import Error from './pages/rrror';
+import Shop from './pages/dhop';
+import Cart from './pages/vart';
+import Dashboard from './pages/dashboard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // USERCONTEXT

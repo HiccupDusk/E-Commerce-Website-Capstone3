@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import {
   Box,
   ChakraProvider,
-  useColorModeValue,
   bgGradient,
 } from '@chakra-ui/react';
 import theme from './theme';

@@ -18,7 +18,7 @@ import NotSignIn from '../components/NotSignIn';
 import HomeSection2 from '../components/HomeSection2';
 import CartSection1 from '../components/CartSection1';
 import OrderSummary from '../components/OrderSummary';
-import CartItemCard from '../components/CartItemCard';
+  import CartItemCard from '../components/CartItemCard';
 
 // useContext
 import UserContext from '../UserContext';

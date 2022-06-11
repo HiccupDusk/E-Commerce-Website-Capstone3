@@ -22,13 +22,9 @@ import {
   Textarea,
   FormLabel,
   Box,
-  Select,
-  InputRightAddon,
   Input,
   useDisclosure,
   Stack,
-  InputGroup,
-  InputLeftAddon,
   Flex,
 } from '@chakra-ui/react';
 

@@ -1,4 +1,4 @@
-import { Heading, Spacer, Wrap, Divider, Box, Flex } from '@chakra-ui/react';
+import { Wrap, Divider, Flex } from '@chakra-ui/react';
 import { useEffect, useState, useContext } from 'react';
 
 // local component
@@ -15,7 +15,7 @@ import UserContext from '../UserContext';
 export default function Shop() {
   const [products, setProducts] = useState();
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     fetch('https://stark-spire-46613.herokuapp.com/api/products/')

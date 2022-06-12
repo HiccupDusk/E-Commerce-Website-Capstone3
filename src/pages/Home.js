@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  Container,
-  chakra,
-  Stack,
-  Text,
-  Button,
-  Box,
-  Divider,
-} from '@chakra-ui/react';
+import { Box, Divider } from '@chakra-ui/react';
 
 // Here we have used react-icons package for the icons
 import HomeSection1 from '../components/sectionComponents/HomeSection1';

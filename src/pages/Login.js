@@ -21,8 +21,6 @@ import {
   useColorModeValue,
   InputGroup,
   InputRightElement,
-  useToast,
-  Link,
   HStack,
 } from '@chakra-ui/react';
 
@@ -37,7 +35,6 @@ import { Navigate } from 'react-router-dom';
 
 function SignIn() {
   // Chakra color mode
-  const titleColor = useColorModeValue('teal.300', 'teal.200');
   const textColor = useColorModeValue('gray.400', 'white');
 
   //  authentication
@@ -87,7 +84,7 @@ function SignIn() {
           Toast.fire({
             title: 'Sign in successfully',
             icon: 'success',
-            title: 'Welcome to Camisetas, Enjoy your Stay!',
+            text: 'Welcome to Camisetas, Enjoy your Stay!',
             background: '#F5F5F5',
           });
         } else {

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 // LIBRARY
-import { Box, ChakraProvider, bgGradient } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme';
 import './App.css';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // CHAKRA COMPONENT
 import {
@@ -9,8 +9,6 @@ import {
   SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react';
-
-import { StarIcon } from '@chakra-ui/icons';
 
 // ALERTS
 import Swal from 'sweetalert2';
@@ -22,7 +20,7 @@ function Ma({ CardItemProp }) {
   const bg2 = useColorModeValue('gray.100', 'gray.700');
 
   // destructing
-  const { name, price, _id, description } = CardItemProp;
+  const { name, price, _id } = CardItemProp;
 
   const [count, setCount] = useState(0);
 

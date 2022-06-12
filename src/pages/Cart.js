@@ -6,7 +6,6 @@ import { useEffect, useState, useContext } from 'react';
 import {
   Wrap,
   Flex,
-  Box,
   Stack,
   useColorModeValue,
   Text,
@@ -27,7 +26,7 @@ const Cart = () => {
 
   const [products, setProducts] = useState([]);
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     fetch(

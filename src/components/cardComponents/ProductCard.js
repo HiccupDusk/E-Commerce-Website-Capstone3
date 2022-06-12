@@ -16,17 +16,12 @@ import {
   Text,
   Button,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-
-// USERCONTEXT
-// import UserContext from '../UserContext';
 
 // ALERTS
 import Swal from 'sweetalert2';
 
 export default function ProductCard({ productProp }) {
   const { name, price, _id, description } = productProp;
-  // const { user } = useContext(UserContext);
 
   // TOAST
   const Toast = Swal.mixin({

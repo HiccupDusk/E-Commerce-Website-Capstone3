@@ -3,23 +3,7 @@ import { Navigate } from 'react-router-dom';
 //Redirect
 import UserContext from '../UserContext';
 
-// Toast
-import Swal from 'sweetalert2';
-
 export default function Logout() {
-  // TOAST
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'center',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer);
-      toast.addEventListener('mouseleave', Swal.resumeTimer);
-    },
-  });
-
   const { unsetUser, setUser } = useContext(UserContext);
 
   //Clear the localStorage

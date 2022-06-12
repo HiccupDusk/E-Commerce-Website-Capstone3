@@ -1,16 +1,13 @@
 import React from 'react';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   Heading,
   HStack,
-  VStack,
-  Wrap,
   Button,
   Text,
   useColorModeValue,
   Flex,
-  Box,
 } from '@chakra-ui/react';
 
 // local Component

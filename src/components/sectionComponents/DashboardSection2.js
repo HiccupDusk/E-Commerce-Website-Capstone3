@@ -3,18 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 // CHAKRA COMPNENTS
-import {
-  chakra,
-  Flex,
-  Icon,
-  useColorModeValue,
-  Button,
-  useBreakpointValue,
-  Stack,
-  SimpleGrid,
-  ButtonGroup,
-  IconButton,
-} from '@chakra-ui/react';
+import { Flex, useColorModeValue, Stack } from '@chakra-ui/react';
 
 // local components
 import DashboardCard from '../cardComponents/DashboardCard';
@@ -40,9 +29,6 @@ export default function Component() {
   });
 
   const bg = useColorModeValue('white', 'gray.800');
-  const bg2 = useColorModeValue('white', 'gray.800');
-  const bg3 = useColorModeValue('gray.100', 'gray.700');
-
   return (
     <Flex
       w='full'

@@ -55,7 +55,7 @@ function SignIn() {
   // TOAST
   const Toast = Swal.mixin({
     toast: true,
-    position: 'bottom-center',
+    position: 'center',
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
@@ -102,20 +102,6 @@ function SignIn() {
 
     setEmail('');
     setPassword('');
-
-    /*
-		Syntax:
-			localStorage.setItem("propertyName", value)
-
-		*/
-    //localStorage.setItem("email", email)
-
-    //Set the global user state to have properties from local storage
-    // setUser({
-    // 	email: localStorage.getItem('email')
-    // })
-
-    //alert(`${email} has been verified. Welcome back!`);
   }
 
   const retrieveUserDetails = (token) => {
@@ -211,6 +197,7 @@ function SignIn() {
                       type='text'
                       placeholder='Your email adress'
                       size='lg'
+                      id='1'
                     />
                     {/* end of email */}
                     {/* password */}
@@ -227,6 +214,7 @@ function SignIn() {
                         size='lg'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        id='2'
                       />
                       <InputRightElement width='4.5rem' mt={1}>
                         <Button

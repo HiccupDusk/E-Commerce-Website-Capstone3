@@ -298,7 +298,6 @@ function SignUp() {
               or
             </Text>
             {/* FORM CONTROL*/}
-
             <form onSubmit={(e) => registerUser(e)}>
               <FormControl>
                 <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
@@ -314,6 +313,7 @@ function SignUp() {
                   size='lg'
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  id='1'
                 />
                 <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
                   Last Name

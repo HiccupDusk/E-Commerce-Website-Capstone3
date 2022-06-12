@@ -47,7 +47,7 @@ const Cart = () => {
           })
         );
       });
-  }, []);
+  });
 
   return user.id !== null ? (
     <>

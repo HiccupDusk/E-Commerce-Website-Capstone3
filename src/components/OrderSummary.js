@@ -36,7 +36,7 @@ const OrderSummary = () => {
           })
         );
       });
-  }, []);
+  });
   useEffect(() => {
     fetch(
       'https://stark-spire-46613.herokuapp.com/api/products/addTotalOrders',
@@ -60,7 +60,7 @@ const OrderSummary = () => {
           })
         );
       });
-  }, []);
+  });
 
   return (
     <Flex

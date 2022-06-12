@@ -176,7 +176,7 @@ const DashboardCard = ({ productProp }) => {
 
   function updateProduct(e) {
     //prevents page redirection via a form submission
-
+    e.preventDefault();
     fetch(
       `https://stark-spire-46613.herokuapp.com/api/products/updateProduct/${_id}`,
       {

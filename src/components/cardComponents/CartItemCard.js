@@ -27,7 +27,7 @@ function Ma({ CardItemProp }) {
   // toast
   const Toast = Swal.mixin({
     toast: true,
-    position: 'bottom-center',
+    position: 'center',
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
@@ -58,7 +58,6 @@ function Ma({ CardItemProp }) {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged === true) {
-          setCount(count + 1);
           Toast.fire({
             title: 'Succesfully Remove From Cart',
             icon: 'success',

@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 // LIBRARY
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme';
-import './App.css';
 
 // COMPONENTS
 import AppNavbar from './components/AppNavbar';
